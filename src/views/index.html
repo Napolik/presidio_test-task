@@ -27,6 +27,8 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/main.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.2.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
         defer></script>
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.2.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
@@ -106,8 +108,8 @@
 
     <div class="benefits benefits--bg-grey">
         <div class="container">
-            <h2 class="benefits__title">Bringing the benefits of multiple<br />assays into one</h2>
-            <p class="benefits__description">
+            <h2 class="title">Bringing the benefits of multiple<br />assays into one</h2>
+            <p class="description">
                 Helix’s Exome+® assay has been carefully optimized to provide the benefits of lcWGS, <br />whole exome
                 sequencing, microarrays, and targeted panels — all in one assay.
             </p>
@@ -249,22 +251,63 @@
         </div>
     </div>
 
-    <div class="futured benefits">
+    <div class="futured">
         <div class="container">
             <div class="futured__top">
-                <h2 class="benefits__title">A future proofed assay</h2>
-                <p class="benefits__description">
+                <h2 class="title">A future proofed assay</h2>
+                <p class="description">
                     There are several advantages to running panels in the presence of a whole exome,<br />including
                     flexible test design, flexible re-testing, and increased functionality.
                 </p>
             </div>
-            <div class="futured__bottom">
+            <div class="futured__content-container">
                 <div class="futured__items">
-                    <div class="futured__items-item">
-                        <div class="futured__title">
+                    <div class="futured__item">
+                        <div class="futured__title" id="Item1">
                             <h4 class="futured__title-text">Flexible test design</h4>
+                            <img class="futured__title-icon" src="img/down.png" />
+                        </div>
+                        
+                        <div class="futured__description">
+                            <div class="futured__mobile-image-container">
+                                <img class="futured__mobile-image" src="img/1.png" alt="">
+                            </div>
+                            <p class="futured__description-text">
+                                The Exome+ assay provides the flexibility needed to build a comprehensive panel that can
+                                be expanded over time. With ~20,000 genes sequenced in each sample, every gene becomes a
+                                candidate for inclusion. And, while we have ensured the highest call rates across those
+                                genes that are most likely to belong to a panel, the Exome+ assay delivers high call
+                                rates for all genes beyond this core set.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="futured__item">
+                        <div class="futured__title" id="Item2">
+                            <h4 class="futured__title-text">Sequence once, query often</h4>
+                            <img class="futured__title-icon" src="img/down.png" />
                         </div>
                         <div class="futured__description">
+                            <div class="futured__mobile-image-container">
+                                <img class="futured__mobile-image" src="img/2.png" alt="">
+                            </div>
+                            <p class="futured__description-text">
+                                The Exome+ assay provides the flexibility needed to build a comprehensive panel that can
+                                be expanded over time. With ~20,000 genes sequenced in each sample, every gene becomes a
+                                candidate for inclusion. And, while we have ensured the highest call rates across those
+                                genes that are most likely to belong to a panel, the Exome+ assay delivers high call
+                                rates for all genes beyond this core set.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="futured__item">
+                        <div class="futured__title"  id="Item3">
+                            <h4 class="futured__title-text">Comprehensive PGx</h4>
+                            <img class="futured__title-icon" src="img/down.png" />
+                        </div>
+                        <div class="futured__description">
+                            <div class="futured__mobile-image-container">
+                                <img class="futured__mobile-image" src="img/3.png" alt="">
+                            </div>
                             <p class="futured__description-text">
                                 The Exome+ assay provides the flexibility needed to build a comprehensive panel that can
                                 be expanded over time. With ~20,000 genes sequenced in each sample, every gene becomes a
@@ -275,10 +318,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="futured__image">
-                    <img src="img/1.png" alt="">
+                <div class="futured__image-block">
+                    <img class="futured__picture" src="img/1.png" alt="">
                 </div>
             </div>
+            
 
         </div>
     </div>
@@ -292,6 +336,22 @@
                 x.style.display = "none";
             } else {
                 x.style.display = "block";
+            }
+        }
+
+        
+        $('.futured__title').on("click", function(event){
+            hideText();
+            $(this).next().show();
+            let id = $(this).attr('id').split('')[4];
+            let image_name = 'img/' + id + '.png';
+            $('.futured__picture').attr("src", image_name);
+        });
+
+        function hideText(){
+            let elements = document.getElementsByClassName("futured__description");
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.display = "none";    
             }
         }
 
@@ -317,7 +377,7 @@
         document.addEventListener("DOMContentLoaded", function (event) {
             openTab(event, 'tab1');
             document.getElementById('active-link').className += " tabs__link--active";
-
+            hideText();
         });
 
 
