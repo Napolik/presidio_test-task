@@ -1,0 +1,246 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/libs";
+@import "base/fonts";
+@import "base/general";
+@import "../blocks/modules";
+
+//Default breakpoints
+$sm: 510px;
+$md: 690px;
+$lg: 930px;
+$xl: 1110px;
+
+$default-font: 'TTNorms';
+$black: #232323;
+$grey: #4a4a4a;
+$dark-grey: #363636;
+$blue: #a0c5db;
+$white: #ffffff;
+$white-two: #f4f4f4;
+$active-link: #4b94c6;
+
+
+
+.announcement{
+    display: flex;
+    justify-content: center;
+    &__text{
+        font-family: $default-font;
+        font-size: 14px;
+        color: $white;
+    }
+    &__link{
+        font-weight: bold;
+        color: $white;
+    }
+    &--blue{
+        background-color: $blue;
+    }
+}
+
+.header{
+   
+    &__top-inner{
+        display: flex;
+        @media screen and (max-width: $md) {
+            justify-content: space-between;
+        }
+    }
+    &__top{
+
+    }
+    &__content{
+        
+    }
+    &__content-inner{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 474px;
+    }
+    &__content-title{
+        font-family: $default-font;
+        font-size: 44px;
+        font-weight: bold;
+        line-height: 1.14;
+    }
+    &__content-description{
+        font-family: $default-font;
+        font-size: 20px;
+        line-height: 1.5;
+        color: $black;
+        width: 50%;
+    }
+    &--mobile-menu{
+            display: none;  
+    }
+}    
+
+.logo{
+    width: 30%;
+    &__image{
+        &--small{        
+            height: 20px;
+            margin: 10px;
+        }
+    }
+}
+
+
+.burger-menu{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    &__button{
+        padding: 10px;
+        cursor: pointer;
+    }
+    @media screen and (min-width: $md) {
+        display: none;
+    }
+}
+
+.menu{
+    width: 70%;
+    animation: fadeEffect 1s;
+    @media screen and (max-width: $md) {
+        width: 100%;
+    }
+    &__list{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        align-items: center;
+        @media screen and (max-width: $md) {
+            flex-direction: column;
+        }
+    }
+    &__list-item{
+        @media screen and (max-width: $md) {
+            border-bottom: 1px solid rgba(0,0,0,.6);
+            border-top: 1px solid rgba(255,255,255,.2);
+            margin-bottom: 15px;
+        }
+    }
+    &__link{
+        text-decoration: none;
+        font-family: $default-font;
+        font-size: 16px;
+        line-height: 1.63;
+        &--grey{
+            color: $grey;
+           
+        }
+    }
+    &--desktop-menu{
+        @media screen and (max-width: $md) {
+            display: none;
+        }
+    }
+}
+
+.benefits{
+    background-color: $white-two;
+    &__title{
+        font-family: $default-font;
+        font-size: 34px;
+        font-weight: bold;
+        text-align: center;
+        color: $dark-grey;
+        padding-top: 60px;
+    }
+    &__description{
+        font-family: $default-font;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.63;
+        text-align: center;
+        color: $dark-grey;
+    }
+}
+
+.tabs{
+
+    &__tab{
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+    }
+    &__link{
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: $default-font;
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+        color: #ababab;
+        &--active{
+            color: $active-link;
+        }
+    }
+    &__content{
+        display: none;
+        animation: fadeEffect 1s;
+        background-color: $white;
+    }
+    &__text{
+        width: 50%;
+        padding: 60px;
+    }
+    &__title{
+        font-family: $default-font;
+        font-size: 24px;
+        font-weight: bold;
+        color: $dark-grey;
+        &--center{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__description{
+        font-family: $default-font;
+        font-size: 16px;
+        color: $grey;
+        &--mobile{
+            width: 90%;
+            padding: 5%;
+        }
+    }
+    &__image-container{
+        width: 50%;
+        padding-top: 60px;
+    }
+    &__image{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        padding: 5%;
+
+    }
+}
+
+.mobile-carousel{
+    display: none;
+}
+
+@media screen and (max-width: $md) {
+    .benefits{
+        display: none;
+    }
+    .mobile-carousel{
+        display: block;
+    }
+}
+
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+

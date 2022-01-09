@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helix</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.2.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.2.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="announcement announcement--blue">
+        <p class="announcement__text">
+            We’ve updated our policies.&nbsp;&nbsp;<a class="announcement__link" href="#">Learn more</a>
+        </p>
+    </div>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-inner">
+                    <div class="logo">
+                        <a class="logo__link" href="#">
+                            <img class="logo__image logo__image--small" src="img/logo.png" />
+                        </a>
+                    </div>
+                    <div class="menu menu--desktop-menu">
+                        <ul class="menu__list">
+                            <li class="menu__list-item">
+                                <a class="menu__link menu__link--grey" href="#">Population Health</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__link menu__link--grey" href="#">DNA Tests</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__link menu__link--grey" href="#">Register Kit</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__link menu__link--grey" href="#">Sign in</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__link" href="#">
+                                    <img class="menu__cart-icon" src="img/cart-icon.svg" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="burger-menu">
+                        <a class="burger-menu__button" href="#" onclick="show_hide_mobile_menu();">
+                            <img class="burger-menu__image" src="img/burger-menu.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header header--mobile-menu" id="mobile-menu">
+            <div class="container">
+                <div class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__link menu__link--grey" href="#">Population Health</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__link menu__link--grey" href="#">DNA Tests</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__link menu__link--grey" href="#">Register Kit</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__link menu__link--grey" href="#">Sign in</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__link" href="#">
+                                <img class="menu__cart-icon" src="img/cart-icon.svg" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="benefits benefits--bg-grey">
+        <div class="container">
+            <h2 class="benefits__title">Bringing the benefits of multiple<br />assays into one</h2>
+            <p class="benefits__description">
+                Helix’s Exome+® assay has been carefully optimized to provide the benefits of lcWGS, <br />whole exome
+                sequencing, microarrays, and targeted panels — all in one assay.
+            </p>
+            <div class="tabs">
+                <div class="tabs__tab">
+                    <a class="tabs__link" id="active-link" onclick="openTab(event, 'tab1')">Targeted Panels</a>
+                    <a class="tabs__link" onclick="openTab(event, 'tab2')">Whole Exome Sequencing</a>
+                    <a class="tabs__link" onclick="openTab(event, 'tab3')">lcWGS and Microarrays</a>
+                </div>
+                <!-- Tab content -->
+                <div class="tabs__content" id="tab1">
+                    <div class="tabs__text">
+                        <h3 class="tabs__title">Targeted Panels</h3>
+                        <p class="tabs__description">Panels are often used in clinical settings because they’re low cost
+                            and provide high quality coverage
+                            of specific, pre-defined genomic regions of interest. While useful in certain settings, such
+                            assays are limited by their narrow focus.
+                            <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                            to many disease states, the Exome+ assay enables you to run multiple panel-grade analyses
+                            with a single sample.
+                        </p>
+                    </div>
+                    <div class="tabs__image-container">
+                        <img class="tabs__image" src="img/Oval.png" alt="">
+                    </div>
+                </div>
+
+                <div class="tabs__content" id="tab2">
+                    <div class="tabs__text">
+                        <h3 class="tabs__title">Whole Exome Sequencing</h3>
+                        <p class="tabs__description">Panels are often used in clinical settings because they’re low cost
+                            and provide high quality coverage
+                            of specific, pre-defined genomic regions of interest. While useful in certain settings, such
+                            assays are limited by their narrow focus.
+                            <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                            to many disease states, the Exome+ assay enables you to run multiple panel-grade analyses
+                            with a single sample.
+                        </p>
+                    </div>
+                    <div class="tabs__image-container">
+                        <img class="tabs__image" src="img/Oval2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="tabs__content" id="tab3">
+                    <div class="tabs__text">
+                        <h3 class="tabs__title">lcWGS and Microarrays</h3>
+                        <p class="tabs__description">Panels are often used in clinical settings because they’re low cost
+                            and provide high quality coverage
+                            of specific, pre-defined genomic regions of interest. While useful in certain settings, such
+                            assays are limited by their narrow focus.
+                            <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                            to many disease states, the Exome+ assay enables you to run multiple panel-grade analyses
+                            with a single sample.
+                        </p>
+                    </div>
+                    <div class="tabs__image-container">
+                        <img class="tabs__image" src="img/Oval3.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Can't use BEM naming in this block, because its external slider -->
+    <div class="mobile-carousel">
+        <div class="container">
+            <div class="swiffy-slider slider-indicators-round">
+                <ul class="tabs slider-container">
+                    <li>
+                        <div id="slide1">
+                            <h3 class="tabs__title tabs__title--mobile tabs__title--center">Targeted Panels</h3>
+                            <br>
+                            <img class="tabs__image tabs__image--mobile" src="img/Oval.png" alt="" />
+                            <br />
+                            <p class="tabs__description tabs__description--mobile">Panels are often used in clinical
+                                settings because they’re low cost
+                                and provide high quality coverage
+                                of specific, pre-defined genomic regions of interest. While useful in certain settings,
+                                such
+                                assays are limited by their narrow focus.
+                                <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                                to many disease states, the Exome+ assay enables you to run multiple panel-grade
+                                analyses
+                                with a single sample.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="slide2">
+                            <h3 class="tabs__title tabs__title--mobile tabs__title--center">Whole Exome Sequencing</h3>
+                            <br>
+                            <img class="tabs__image tabs__image--mobile" src="img/Oval2.png" alt="" />
+                            <br />
+                            <p class="tabs__description tabs__description--mobile">Panels are often used in clinical
+                                settings because they’re low cost
+                                and provide high quality coverage
+                                of specific, pre-defined genomic regions of interest. While useful in certain settings,
+                                such
+                                assays are limited by their narrow focus.
+                                <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                                to many disease states, the Exome+ assay enables you to run multiple panel-grade
+                                analyses
+                                with a single sample.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="slide3">
+                            <h3 class="tabs__title tabs__title--mobile tabs__title--center">lcWGS and Microarrays</h3>
+                            <br>
+                            <img class="tabs__image tabs__image--mobile" src="img/Oval3.png" alt="" />
+                            <br />
+                            <p class="tabs__description tabs__description--mobile">Panels are often used in clinical
+                                settings because they’re low cost
+                                and provide high quality coverage
+                                of specific, pre-defined genomic regions of interest. While useful in certain settings,
+                                such
+                                assays are limited by their narrow focus.
+                                <br /><br />With ≥ 99.5% call rate across ~600 genes relevant
+                                to many disease states, the Exome+ assay enables you to run multiple panel-grade
+                                analyses
+                                with a single sample.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <ul class="slider-indicators">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="futured benefits">
+        <div class="container">
+            <div class="futured__top">
+                <h2 class="benefits__title">A future proofed assay</h2>
+                <p class="benefits__description">
+                    There are several advantages to running panels in the presence of a whole exome,<br />including
+                    flexible test design, flexible re-testing, and increased functionality.
+                </p>
+            </div>
+            <div class="futured__bottom">
+                <div class="futured__items">
+                    <div class="futured__items-item">
+                        <div class="futured__title">
+                            <h4 class="futured__title-text">Flexible test design</h4>
+                        </div>
+                        <div class="futured__description">
+                            <p class="futured__description-text">
+                                The Exome+ assay provides the flexibility needed to build a comprehensive panel that can
+                                be expanded over time. With ~20,000 genes sequenced in each sample, every gene becomes a
+                                candidate for inclusion. And, while we have ensured the highest call rates across those
+                                genes that are most likely to belong to a panel, the Exome+ assay delivers high call
+                                rates for all genes beyond this core set.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="futured__image">
+                    <img src="img/1.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+    <script>
+        function show_hide_mobile_menu() {
+            let x = document.getElementById("mobile-menu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        function openTab(evt, tab_name) {
+            let i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabs__content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tabs__link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" tabs__link--active", "");
+            }
+
+
+            document.getElementById(tab_name).style.display = "flex";
+            evt.currentTarget.className += " tabs__link--active";
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            openTab(event, 'tab1');
+            document.getElementById('active-link').className += " tabs__link--active";
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
